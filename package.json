@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/xjeffss/travel_project2#readme",
   "dependencies": {
+    "ejs": "^3.1.5",
     "express": "^4.17.1",
     "pg": "^8.5.1",
     "sequelize": "^6.5.0",
