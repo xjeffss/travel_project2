@@ -1,3 +1,5 @@
+This is the template that was added in the instruction for what the readme should look like.
+
 Project Overview
 Project Description
 Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
