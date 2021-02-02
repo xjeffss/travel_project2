@@ -10,7 +10,8 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      StateProvince.belongsTo(models.Country, {foreignKey: 'countryId'});
+      StateProvince.hasMany(models.Destination, {foreignKey: 'stateId'});
     }
   };
   StateProvince.init({
