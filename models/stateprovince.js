@@ -10,13 +10,13 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      StateProvince.belongsTo(models.Country, {foreignKey: 'countryId'});
+      StateProvince.belongsTo(models.Recommendation, {foreignKey: 'stateid'});
       StateProvince.hasMany(models.Destination, {foreignKey: 'stateId'});
     }
   };
   StateProvince.init({
     stateName: DataTypes.STRING,
-    countryId: DataTypes.INTEGER
+    country: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'StateProvince',
