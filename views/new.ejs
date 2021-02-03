@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Travel Entry</title>
+</head>
+<body>
+    <h1>New Travel Entry</h1>
+    <form action="/recommendation" method="POST">
+        <!--Country:<input type="text" name="name" /></br>-->
+        State/Province: <select name="state">
+            <% for (let i=0; i < states.length; i++) {
+                let selected = (i == 0) ? "selected" : "";
+            %>
+                <option value="<%=states[i].id%>" <%=selected%> ><%=states[i].stateName%></option>
+                <%=states[i].stateName%>
+            
+            <% } %>
+            
+            </select>
+
+            </br>
+        Places you visited (City, Park etc): <input type="text" name="destination" /></br>
+        Your Rating: 
+        <select name="rating">
+            <%for (let i=1; i< 6; i++) {%>
+                <option value="<%=i%>"><%=i%></option>
+
+            <% } %>
+        </select>
+        Your Summary:<input type="text" name="summary" /></br>
+        <input type="submit" value="New Travel Entry" />
+
+    </form>
+</body>
+</html>

@@ -1,19 +1,19 @@
-const User = require('../models').User;
+/*const User = require('../models').User;
 const Destination = require('../models').Destination;
 const Recommendation = require('../models').Recommendation;
 
 const renderProfile = (req, res) => {
     User.findByPk(req.params.index, {
         include: [
-            /*{
+            {
                 model: Recommendation,
-            },*/
+            },
             {
                 model: Destination,
             }
         ]
     })
-    .then(userProfile => {
+    .then(userProfile =>{
         res.render('users/profile.ejs',
         {
             user: userProfile
@@ -24,4 +24,4 @@ const renderProfile = (req, res) => {
 
 module.exports = {
     renderProfile,
-}
+}*/

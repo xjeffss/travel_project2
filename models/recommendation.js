@@ -11,12 +11,14 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-        
-    }
+      Recommendation.belongsTo(models.User, {foreignKey: 'userId'});
+      Recommendation.hasMany(models.StateProvince, {foreignKey: 'stateId'});
+      }
   };
   Recommendation.init({
     userId: DataTypes.INTEGER,
-    destinationId: DataTypes.INTEGER,
+    destination: DataTypes.STRING,
+    stateId: DataTypes.INTEGER,
     rating: DataTypes.INTEGER,
     summary: DataTypes.STRING
   }, {
