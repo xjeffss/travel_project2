@@ -2,6 +2,16 @@ const User = require('../models').User;
 const Recommendation = require('../models').Recommendation;
 const State = require('../models').StateProvince;
 
+
+const newTravel = (req, res) => {
+    
+    Recommendation.create(req.body)
+    .then(newTravel => {
+        console.log(newTravel);
+        res.redirect('/recommendations/${newTravel.userId}');
+    })
+}
+
 const show = (req, res) => {
     User.findByPk(req.params.index, {
         include: [
@@ -21,7 +31,6 @@ const show = (req, res) => {
         
 }
 
-
 const renderNew = (req, res) => {
     User.findByPk(req.params.index, {
         include: [
@@ -33,6 +42,7 @@ const renderNew = (req, res) => {
     .then(userProfile =>{
         State.findAll()
         .then(states => {
+            console.log(userProfile);
             res.render('new.ejs',
             {
                 user: userProfile,
@@ -44,17 +54,8 @@ const renderNew = (req, res) => {
     
 }
 
-const newTravel = (req, res) => {
-    
-    Recommendation.create(req.body)
-    .then(newTravel => {
-        console.log(req.body);
-        res.redirect('/recommendations/${newTravel.userId}');
-    })
-}
-
 module.exports = {
+    newTravel,
     show,
     renderNew,
-    newTravel,
 }

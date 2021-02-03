@@ -7,10 +7,12 @@
 </head>
 <body>
     <h1>New Travel Entry</h1>
-    <form action="/recommendation" method="POST">
+  
+
+    <form action="/recommendations/new/1" method="POST">
 
         <!--Country:<input type="text" name="name" /></br>-->
-        <input type="hidden" name="userId" value="<%=user.id%>"/>
+        <input type="text" name="userId" value="1" />
 
         State/Province: <select name="stateId">
             <% for (let i=0; i < states.length; i++) {

@@ -11,13 +11,15 @@
 
     <% for(let i=0; i<user.Recommendations.length; i++) { %>
         <li>
-            <%= user.Recommendations[i].destination%>
+            <%= user.Recommendations[i].destination%> 
+            <input type="button" value="Edit Travel Entry" /> 
+            <input type="button" value="Delete Travel Entry" /> 
         </li>
 
     <% } %>
 
     <h2> 
-    <a href="/recommendations/new/<%=user.id%>">New Travel Entry</a>
+    <a href="/recommendations/new">New Travel Entry</a>
     </h2>
     
 </body>

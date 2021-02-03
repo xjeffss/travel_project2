@@ -3,8 +3,9 @@ const router = express.Router();
 const ctrl = require('../controllers');
 
 
+
+router.get('/new', ctrl.recommendations.renderNew);
+router.post('/new/:index', ctrl.recommendations.newTravel);
 router.get('/:index', ctrl.recommendations.show);
-router.get('/new/:index', ctrl.recommendations.renderNew);
-router.get('/',ctrl.recommendations.newTravel);
 
 module.exports = router;
