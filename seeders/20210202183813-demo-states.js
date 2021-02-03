@@ -5,39 +5,39 @@ module.exports = {
 await queryInterface.bulkInsert('StateProvinces', [
   {
      stateName: 'California',
-     countryId: 1
+     country: 'United States of America'
      },
      {
       stateName: 'Florida',
-      countryId: 1
+      country: 'United States of America'
       },
       {
         stateName: 'Hawaii',
-        countryId: 1
+        country: 'United States of America'
         },
       {
         stateName: 'Alberta',
-        countryId: 3  
+        country: 'Canada'
         },
         {
           stateName: 'Quebec',
-          countryId: 3  
+          country: 'Canada' 
         },
         {
           stateName: 'Ontario',
-          countryId: 3  
+          country: 'Canada'  
         },
         {
           stateName: 'Baja California',
-          countryId: 2
+          country: 'Mexico'
         },
         {
           stateName: 'Yucatan',
-          countryId: 2
+          country: 'Mexico'
         },
         {
           stateName: 'Chiapas',
-          countryId: 2
+          country: 'Mexico'
         },
     ], {});
     

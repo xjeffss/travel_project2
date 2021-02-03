@@ -12,7 +12,11 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull:false
       },
-      destinationId: {
+      destination: {
+        type: Sequelize.STRING,
+        allowNull:false
+      },      
+      stateId: {
         type: Sequelize.INTEGER,
         allowNull:false
       },
@@ -34,13 +38,7 @@ module.exports = {
         type: Sequelize.DATE
       }
     },
-    {
-      uniqueKeys: {
-        actions_unique: {
-          fields: ['destinationId', 'userId']
-        }
-      }
-    });
+    );
   },
   down: async (queryInterface, Sequelize) => {
     await queryInterface.dropTable('Recommendations');

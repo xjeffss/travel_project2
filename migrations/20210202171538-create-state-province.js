@@ -12,8 +12,8 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      countryId: {
-        type: Sequelize.INTEGER,
+      country: {
+        type: Sequelize.STRING,
         allowNull: false
       },
       createdAt: {
