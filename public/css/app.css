@@ -1,8 +1,22 @@
 body {
-    color: red
+    background-color: rgb(173, 223, 240);
+    
 }
 
 h1 {
-    text-align: center;
+    color: blue;
+    font-family: fantasy;
+    text-align: right;
 
+}
+form#login {
+    color: blue;
+    font-family: fantasy;
+    text-align: right;
+}
+
+h3 {
+    color: blue;
+    font-family: fantasy;
+    text-align: right;
 }
