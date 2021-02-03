@@ -1,27 +1,60 @@
-/*const User = require('../models').User;
-const Destination = require('../models').Destination;
+const User = require('../models').User;
 const Recommendation = require('../models').Recommendation;
+const State = require('../models').StateProvince;
 
-const renderProfile = (req, res) => {
+const show = (req, res) => {
     User.findByPk(req.params.index, {
         include: [
             {
                 model: Recommendation,
-            },
-            {
-                model: Destination,
-            }
+            },           
         ]
     })
     .then(userProfile =>{
-        res.render('users/profile.ejs',
+        console.log(userProfile.Recommendations);
+        res.render('show.ejs',
         {
-            user: userProfile
+            user: userProfile,
+                
+        })  
         })
-    })
+        
+}
 
+
+const renderNew = (req, res) => {
+    User.findByPk(req.params.index, {
+        include: [
+            {
+                model: Recommendation,
+            },           
+        ]
+    })
+    .then(userProfile =>{
+        State.findAll()
+        .then(states => {
+            res.render('new.ejs',
+            {
+                user: userProfile,
+                states: states,
+            })  
+        })
+        
+    })
+    
+}
+
+const newTravel = (req, res) => {
+    
+    Recommendation.create(req.body)
+    .then(newTravel => {
+        console.log(req.body);
+        res.redirect('/recommendations/${newTravel.userId}');
+    })
 }
 
 module.exports = {
-    renderProfile,
-}*/
+    show,
+    renderNew,
+    newTravel,
+}

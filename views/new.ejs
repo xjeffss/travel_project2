@@ -8,8 +8,11 @@
 <body>
     <h1>New Travel Entry</h1>
     <form action="/recommendation" method="POST">
+
         <!--Country:<input type="text" name="name" /></br>-->
-        State/Province: <select name="state">
+        <input type="hidden" name="userId" value="<%=user.id%>"/>
+
+        State/Province: <select name="stateId">
             <% for (let i=0; i < states.length; i++) {
                 let selected = (i == 0) ? "selected" : "";
             %>

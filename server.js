@@ -1,8 +1,6 @@
 const express = require("express");
 
 
-/*const pokemons = require('./models/pokemon');*/
-
 //include the method-override package
 const methodOverride = require('method-override');
 const routes = require('./routes');
@@ -14,13 +12,14 @@ const app = express();
 app.use(methodOverride('_method'));
 app.use(express.urlencoded( {extended: true}));
 
-app.use('/users', routes.users);
+/*app.use('/users', routes.users);*/
+app.use('/recommendations', routes.recommendations);
 
 
 //middleware - should be at the top after require
-app.use((req, res, next) => {
+app.use((req, res) => {
   console.log("I run for all routes");
-  next();
+  
 });
 
 
