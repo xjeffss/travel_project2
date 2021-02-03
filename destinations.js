@@ -1,6 +1,6 @@
-const Destination = require('../models').Destination;//imported fruits array
-const User = require('../models').User;
-const Country = require('../models').Country;
+
+const User = require('./models').User;
+const Country = require('./models').Country;
 
 const show = (req, res)
 

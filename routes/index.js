@@ -1,5 +1,8 @@
+const { recommendations } = require('../controllers');
+
 module.exports = {
     // destinations: require('./destinations'),
     users: require('./users'),
-    travels: require('./travels')
+    travels: require('./users'),
+    recommendations: require('./recommendations')
 }
