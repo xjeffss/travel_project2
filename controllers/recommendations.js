@@ -9,7 +9,7 @@ const newTravel = (req, res) => {
     Recommendation.create(req.body)
     .then(newTravel => {
         console.log(newTravel.userId);
-        res.redirect(`/recommendations/${newTravel.userId}`);
+        res.redirect(`/recommendations/${req.body.userId}`);
     })
 }
 
@@ -103,7 +103,7 @@ const putTravel = (req, res) => {
   )
   .then(updatedTravel => {
     console.log(updatedTravel.userId);
-    res.redirect(`/recommendations/${updatedTravel.userId}`);
+    res.redirect(`/recommendations/${req.body.userId}`);
     
     });
 };
@@ -119,7 +119,7 @@ const showTravel = (req, res) => {
   })
   .then(foundTravel => {
     console.log(foundTravel.stateName);
-    res.render('show.ejs', {
+    res.render('showTravel.ejs', {
     recommendation: foundTravel
     })
   });

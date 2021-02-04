@@ -23,7 +23,7 @@ const selectDest = (req,res) => {
     console.log("hello")
     Recommendation.findByPk(req.params.index)
     .then(destination => {
-        res.redirect(`/recommendation/${destination}`)
+        res.redirect(`/recommendation/${req.body.destination}`)
     })
 }
 
@@ -37,7 +37,8 @@ const login = (req, res) => {
             } 
             }) 
             .then(foundPlayer=> { 
-                res.redirect(`profile/${foundPlayer.id}`);
+                res.redirect(`/recommendations/${foundPlayer.id}`);
+                
                 console.log(`${foundPlayer.id}`)
             })
         }
