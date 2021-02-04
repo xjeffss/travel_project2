@@ -8,4 +8,5 @@ router.get('/travels', ctrl.users.selectDest);
 router.get('/users', ctrl.users.newUser);
 router.post('/users', ctrl.users.addNewUser)
 
+
 module.exports = router;

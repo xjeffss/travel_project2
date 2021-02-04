@@ -10,6 +10,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
 app.use(('/travels', routes.travels));
+// app.use(('/recommendations', routes.travels))
 app.use(methodOverride('_method'));
 
 app.listen(3000, () => {

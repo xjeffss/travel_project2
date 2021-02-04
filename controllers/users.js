@@ -27,6 +27,7 @@ const selectDest = (req,res) => {
     })
 }
 
+// const showDest = (req, res =>)
 
 const login = (req, res) => {
         User.findOne({
@@ -41,7 +42,7 @@ const login = (req, res) => {
             })
         }
 const newUser = (req, res) => {
-    res.render('new.ejs')
+    res.render('newUser.ejs')
     } 
 
 const addNewUser = (req, res) => {
