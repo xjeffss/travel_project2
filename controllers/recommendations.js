@@ -7,12 +7,12 @@ const newTravel = (req, res) => {
     
     Recommendation.create(req.body)
     .then(newTravel => {
-        console.log(newTravel);
-        res.redirect('/recommendations/${newTravel.userId}');
+        console.log(newTravel.userId);
+        res.redirect(`/recommendations/${newTravel.userId}`);
     })
 }
 
-const show = (req, res) => {
+const index = (req, res) => {
     User.findByPk(req.params.index, {
         include: [
             {
@@ -22,7 +22,7 @@ const show = (req, res) => {
     })
     .then(userProfile =>{
         console.log(userProfile.Recommendations);
-        res.render('show.ejs',
+        res.render('index.ejs',
         {
             user: userProfile,
                 
@@ -30,6 +30,19 @@ const show = (req, res) => {
         })
         
 }
+
+/*const index = (req, res) => {
+    Recommendation.findAll( { where: {userId: req.body.index} } )
+    .then(recommendations =>{
+        console.log(recommendations);
+        res.render('index.ejs',
+        {
+            recommendations: recommendations,
+                
+        })  
+        })
+        
+}*/
 
 const renderNew = (req, res) => {
     User.findByPk(req.params.index, {
@@ -54,8 +67,72 @@ const renderNew = (req, res) => {
     
 }
 
+
+
+//delete route
+const deleteTravel = (req, res) => {
+  Recommendation.destroy({ where: {id: req.params.index } } )
+  .then(deletedTravel => {
+    res.redirect(`/recommendations/${deletedTravel.userId}`);   
+    })
+};
+
+
+//edit route
+const editTravel = (req, res) => {
+    Recommendation.findByPk(req.params.index)
+    .then(editedTravel => {
+        State.findAll()
+        .then(states => {
+            res.render('edit.ejs', {
+                recommendation : editedTravel,
+                states: states
+        })
+      
+      })
+    })   
+};
+
+//PUT method for the edit
+const putTravel = (req, res) => {
+  Recommendation.update(req.body, {
+    where: { id: req.params.index },
+    returning: true,
+  } 
+  )
+  .then(updatedTravel => {
+    console.log(updatedTravel.userId);
+    res.redirect(`/recommendations/${updatedTravel.userId}`);
+    
+    });
+};
+
+//show route 
+const showTravel = (req, res) => {
+  Recommendation.findByPk(req.params.index, {
+    include : [
+      {
+        model: StateProvince,
+      },
+    ]
+  })
+  .then(foundTravel => {
+    console.log(foundTravel.stateName);
+    res.render('show.ejs', {
+    recommendation: foundTravel
+    })
+  });
+};
+
+
+
+
 module.exports = {
     newTravel,
-    show,
+    index,
     renderNew,
+    deleteTravel,
+    editTravel,
+    putTravel,
+    showTravel,
 }
