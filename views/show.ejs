@@ -2,7 +2,10 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title></title>
+        <title>
+            <img src="https://lh3.googleusercontent.com/pw/ACtC-3eXRDF36UAtqH-WtsZLw6TimQLAzwlC1u--zYtv1wA6WtLzYvBj3hodW0jAY5DeKDXOw1vtJ_0Vs-oZ2etqNmnJwk0Q-cXKJF2TTxnfN--uIeA6nfdrtd30LWS1eQ6MpSGJnC5mUHpTNYP_b7agL-XW=w1552-h1034-no?authuser=0" 
+            style="width:500px; height:200px"/>
+                Welcome to TravelPedia</title>
         <link rel="stylesheet" href="/css/app.css" />
     </head>
     <body>
@@ -33,9 +36,9 @@ State or Province <select name="stateprovince">
 </br>
 Destination <form action="/travels" method="POST">
     <select name="recommendation">
-      <% for (let i = 1; i<recommendation.length; i++) {%>
+      <% for (let i = 0; i<recommendation.length; i++) {%>
     
-        <option value="../<%=recommendation[i].id%>" selected=<%=recommendation[i]%>><%=recommendation.destination%>
+        <option value="<%=recommendation[i].id%>" selected=<%=recommendation[i].destination%>><%=recommendation[i].destination%>
         </option>
         <% } %>
     </select>
@@ -45,7 +48,7 @@ Destination <form action="/travels" method="POST">
     </form>
 
     <h3> Want to join? New Users register.. </h3>
-        <form id="login" action="/users" method="GETT">
+        <form id="login" action="/users" method="GET">
                  <input type="submit" name="" value="HERE!"/>
         </form>
     </br>

@@ -17,5 +17,6 @@ router.delete('/:index', ctrl.recommendations.deleteTravel);
 
 router.get('/:index', ctrl.recommendations.showTravel);
 
+// router.get('/:index', ctrl.users.newUser);
 
 module.exports = router;

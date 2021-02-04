@@ -10,7 +10,7 @@ const show = (req, res) => {
         // console.log(allStateProvince) 
         Recommendation.findAll(
         ).then(allRecommendation => {
-              
+              console.log(allRecommendation)
             res.render('show.ejs', {
             stateprovince: allStateProvince,
             recommendation: allRecommendation    
@@ -49,7 +49,8 @@ const newUser = (req, res) => {
 const addNewUser = (req, res) => {
     User.create(req.body)
     .then(newUser => {
-        res.redirect(`/users/${newUser}`)
+        // console.log(`${req.body}`)
+        res.redirect(`/recommendations/${newUser.id}`);
 })
 }
 
