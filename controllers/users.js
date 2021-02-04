@@ -21,9 +21,10 @@ const show = (req, res) => {
 
 const selectDest = (req,res) => {
     console.log("hello")
-    Recommendation.findByPk(req.params.index)
+    Recommendation.findAll()
     .then(destination => {
-        res.redirect(`/recommendation/${req.body.destination}`)
+        res.redirect('showDest.ejs')
+        destination: destinations
     })
 }
 
