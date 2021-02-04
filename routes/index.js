@@ -5,5 +5,5 @@ module.exports = {
     users: require('./users'),
     travels: require('./users'),
     recommendations: require('./recommendations'),
-    destinations: require('./users')
+    // destinations: require('./users')
 }

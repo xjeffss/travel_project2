@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/', routes.travels);
 app.use('/recommendations', routes.recommendations);
-app.use('/destinations', routes.destinations)
+// app.use('/destinations', routes.destinations)
 
 
 app.listen(3000, () => {
