@@ -7,7 +7,7 @@ const show = (req, res) => {
 
       })  
     .then(allStateProvince => {
-        console.log(allStateProvince) 
+        // console.log(allStateProvince) 
         Recommendation.findAll(
         ).then(allRecommendation => {
               
@@ -39,6 +39,7 @@ const login = (req, res) => {
             })
         }
 const newUser = (req, res) => {
+    console.log("Hello")
     res.redirect('new.ejs')
     }
 
