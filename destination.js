@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Destination.belongsTo(models.StateProvince, {foreignKey: 'stateId'});
       Destination.belongsToMany(models.User, {
-        through: 'Recommedation',
+        through: 'Recommendation',
         foreignKey: 'destinationId',
         otherKey: 'userId'
       });

@@ -15,7 +15,7 @@ module.exports = {
       destination: {
         type: Sequelize.STRING,
         allowNull:false
-      },      
+      },
       stateId: {
         type: Sequelize.INTEGER,
         allowNull:false
@@ -38,6 +38,7 @@ module.exports = {
         type: Sequelize.DATE
       }
     },
+    
     );
   },
   down: async (queryInterface, Sequelize) => {

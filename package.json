@@ -1,7 +1,7 @@
 {
   "name": "travel_project2",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is the template that was added in the instruction for what the readme should look like.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -25,5 +25,6 @@
     "pg": "^8.5.1",
     "sequelize": "^6.5.0",
     "sequelize-cli": "^6.2.0"
-  }
+  },
+  "devDependencies": {}
 }

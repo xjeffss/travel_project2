@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       StateProvince.belongsTo(models.Recommendation, {foreignKey: 'id'});
-
+      
     }
   };
   StateProvince.init({

@@ -21,11 +21,19 @@ await queryInterface.bulkInsert('StateProvinces', [
         },
         {
           stateName: 'Quebec',
+<<<<<<< HEAD
           country: 'Canada' 
         },
         {
           stateName: 'Ontario',
           country: 'Canada'  
+=======
+          country: 'Canada'
+        },
+        {
+          stateName: 'Ontario',
+          country: 'Canada'
+>>>>>>> master
         },
         {
           stateName: 'Baja California',
