@@ -15,14 +15,7 @@
         <nav>
             <h2>Select a Destination</h2>
         </nav>
-Country <select name="stateprovince">
-  <% for (let i = 0; i<stateprovince.length; i++) {%>
-    <option value="../<%=stateprovince[i].id%>" selected=<%=stateprovince[i]%>><%=stateprovince[i].country%>
-    </option>
-    <% } %>
-    </select>
-</br>
-</br>
+
 State or Province <select name="stateprovince">
   <% for (let i = 0; i<stateprovince.length; i++) {%>
     <option value="<%=stateprovince[i].id%>" selected=<%=stateprovince[i].id%>><%=stateprovince[i].stateName%>
