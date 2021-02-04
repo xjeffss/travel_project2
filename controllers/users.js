@@ -31,11 +31,12 @@ const login = (req, res) => {
         User.findOne({
             where: {
                 username: req.body.username,
-                password: req.body.password
-            }
-            })
+                password: req.body.password,
+            } 
+            }) 
             .then(foundPlayer=> { 
                 res.redirect(`profile/${foundPlayer.id}`);
+                console.log(`${foundPlayer.id}`)
             })
         }
 const newUser = (req, res) => {
