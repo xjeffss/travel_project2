@@ -39,14 +39,21 @@ const login = (req, res) => {
             })
         }
 const newUser = (req, res) => {
-    console.log("Hello")
     res.render('new.ejs')
-    }
+    } 
+
+const addNewUser = (req, res) => {
+    User.create(req.body)
+    .then(newUser => {
+        res.redirect(`/users/${newUser}`)
+})
+}
 
 module.exports = {
     selectDest,
     show,
     login,
-    newUser
+    newUser,
+    addNewUser
   
 }

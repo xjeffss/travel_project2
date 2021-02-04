@@ -1,6 +1,6 @@
 body {
     background-color: rgb(173, 223, 240);
-    
+    flex-direction: row;
 }
 
 h1 {
