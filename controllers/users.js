@@ -20,9 +20,10 @@ const show = (req, res) => {
         )}
 
 const selectDest = (req,res) => {
-    Recommendation.findByPk(req.body)
+    console.log("hello")
+    Recommendation.findByPk(req.params.index)
     .then(destination => {
-        res.render(`/recommendation/${destination}`)
+        res.redirect(`/recommendation/${destination}`)
     })
 }
 
