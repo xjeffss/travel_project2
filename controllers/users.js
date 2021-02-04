@@ -40,7 +40,7 @@ const login = (req, res) => {
         }
 const newUser = (req, res) => {
     console.log("Hello")
-    res.redirect('new.ejs')
+    res.render('new.ejs')
     }
 
 module.exports = {
