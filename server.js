@@ -17,9 +17,9 @@ app.use('/recommendations', routes.recommendations);
 
 
 //middleware - should be at the top after require
-app.use((req, res) => {
+app.use((req, res, next) => {
   console.log("I run for all routes");
-  
+  next();
 });
 
 

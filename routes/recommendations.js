@@ -4,7 +4,7 @@ const ctrl = require('../controllers');
 
 
 
-router.get('/new', ctrl.recommendations.renderNew);
+router.get('/render/:index', ctrl.recommendations.renderNew);
 router.post('/new/:index', ctrl.recommendations.newTravel);
 router.get('/:index', ctrl.recommendations.index);
 

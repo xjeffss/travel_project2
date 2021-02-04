@@ -9,10 +9,10 @@
     <h1>New Travel Entry</h1>
   
 
-    <form action="/recommendations/new/1" method="POST">
+    <form action="/recommendations/new/<%=user.id%>" method="POST">
 
         <!--Country:<input type="text" name="name" /></br>-->
-        <input type="text" name="userId" value="1" />
+        <input type="hidden" name="userId" value="<%=user.id%>" />
 
         State/Province: <select name="stateId">
             <% for (let i=0; i < states.length; i++) {

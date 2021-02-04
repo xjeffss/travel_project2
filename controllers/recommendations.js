@@ -5,6 +5,7 @@ const State = require('../models').StateProvince;
 
 const newTravel = (req, res) => {
     
+    console.log("Hello");
     Recommendation.create(req.body)
     .then(newTravel => {
         console.log(newTravel.userId);
@@ -55,7 +56,7 @@ const renderNew = (req, res) => {
     .then(userProfile =>{
         State.findAll()
         .then(states => {
-            console.log(userProfile);
+            console.log("In render New:" + userProfile);
             res.render('new.ejs',
             {
                 user: userProfile,
