@@ -6,10 +6,11 @@ const show = (req, res) => {
     StateProvince.findAll({
 
       })  
-    .then(allStateProvince => {  
+    .then(allStateProvince => {
+        console.log(allStateProvince) 
         Recommendation.findAll(
         ).then(allRecommendation => {
-            console.log(allRecommendation)    
+              
             res.render('show.ejs', {
             stateprovince: allStateProvince,
             recommendation: allRecommendation    
@@ -17,8 +18,17 @@ const show = (req, res) => {
         }
         )}
         )}
+
+const selectDest = (req,res) => {
+    Recommendation.findByPk(req.body)
+    .then(destination => {
+        res.render(`/recommendation/${destination}`)
+    })
+}
+
+
 const login = (req, res) => {
-        Player.findOne({
+        User.findOne({
             where: {
                 username: req.body.username,
                 password: req.body.password
@@ -28,10 +38,14 @@ const login = (req, res) => {
                 res.redirect(`profile/${foundPlayer.id}`);
             })
         }
+const newUser = (req, res) => {
+    res.redirect('new.ejs')
+    }
 
 module.exports = {
-
+    selectDest,
     show,
     login,
+    newUser
   
 }
