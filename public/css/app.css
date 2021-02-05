@@ -1,6 +1,8 @@
 body {
     background-color: rgb(173, 223, 240);
     flex-direction: row;
+    color: blue;
+    font-family: fantasy;
 }
 
 h1 {

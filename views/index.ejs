@@ -15,7 +15,7 @@
 
     <% for(let i=0; i<user.Recommendations.length; i++) { %>
         <li>
-            <a href="/recommendations/<%=user.Recommendations[i].id%>"> <%= user.Recommendations[i].destination%> </a>
+             <%= user.Recommendations[i].destination%> 
 
             <a href="/recommendations/<%=user.Recommendations[i].id%>/edit">EDIT</a>  
             
@@ -29,10 +29,13 @@
     <% } %>
 
     <h2> 
-        <a href="/recommendations/render/<%=user.id%>">New Travel Entry</a>
+        <a id="login" href="/recommendations/render/<%=user.id%>">New Travel Entry</a>
     </h2>
-        
-    
+</br>
+</br> 
+    <h2> 
+        <a id="login" href="http://localhost:3000/travels">Home Page</a>
+    </h2> 
 
 
     

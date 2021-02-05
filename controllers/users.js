@@ -21,10 +21,14 @@ const show = (req, res) => {
 
 const selectDest = (req,res) => {
     console.log("hello")
-    Recommendation.findAll()
+    Recommendation.findAll({ where: 
+        {id: req.params.index } } )
     .then(destination => {
-        res.render('showDest.ejs')
-        recommendation: destination
+        res.render('showDest.ejs', {
+             recommendation: destination
+        }
+        )
+       
     })
 }
 

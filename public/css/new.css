@@ -1,5 +1,7 @@
 body {
     background-color: rgb(173, 223, 240);
+    color: blue;
+    font-family: fantasy;
     
 }
 
@@ -16,6 +18,11 @@ form#login {
 }
 
 h3 {
+    color: blue;
+    font-family: fantasy;
+    text-align: center;
+}
+a#login {
     color: blue;
     font-family: fantasy;
     text-align: center;
