@@ -1,4 +1,4 @@
-##Project Overview
+#Project Overview
   A web app for the travelers to add recommendations for their travels. This help other travelers to plan their travels. Travelers helping travelers!!
 
 #Technologies Used
