@@ -8,9 +8,9 @@ const show = (req, res) => {
       })  
     .then(allStateProvince => {
         // console.log(allStateProvince) 
-        Recommendation.findAll(
-        ).then(allRecommendation => {
-              console.log(allRecommendation)
+        Recommendation.findAll()
+        .then(allRecommendation => {
+         
             res.render('show.ejs', {
             stateprovince: allStateProvince,
             recommendation: allRecommendation    
@@ -21,10 +21,14 @@ const show = (req, res) => {
 
 const selectDest = (req,res) => {
     console.log("hello")
-    Recommendation.findAll()
+    Recommendation.findAll({ where: 
+        {id: req.params.index } } )
     .then(destination => {
-        res.redirect('showDest.ejs')
-        destination: destinations
+        res.render('showDest.ejs', {
+             recommendation: destination
+        }
+        )
+       
     })
 }
 

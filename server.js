@@ -18,6 +18,6 @@ app.use('/recommendations', routes.recommendations);
 // app.use('/destinations', routes.destinations)
 
 
-app.listen(3000, () => {
+app.listen(process.env.PORT ||3000, () => {
     console.log("Travelpedia Server is listening!!!")
 });
