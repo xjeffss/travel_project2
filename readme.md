@@ -11,9 +11,9 @@
 
 
 #Project Links
-  github repo -
-  deployment - 
-  Wireframes and Entity Relationship Diagram
+  github repo - https://github.com/xjeffss/travel_project2.
+  deployment - https://travelpedia2.herokuapp.com/.
+  Wireframes and Entity Relationship Diagram.
 
 #List of user stories (MVP)
   *As a traveler, I should able to login
